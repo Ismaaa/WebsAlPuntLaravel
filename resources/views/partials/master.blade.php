@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>@yield('titulo')</title>
+	<title>@yield('titol')</title>
 </head>
 <body>
-	@yield('contenido')
+	@yield('contingut')
 </body>
 </html>
