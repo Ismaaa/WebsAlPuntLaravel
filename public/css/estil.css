@@ -1,0 +1,109 @@
+
+* {
+    margin:0;
+    padding:0;
+    font:12pt Arial;
+}
+
+body {
+    background-color:#34495e;
+}
+
+.field {
+    display:flex;
+    margin:5em auto;
+    margin-bottom: 0;
+    width:70%;
+    flex-direction:row;
+    box-shadow:
+            1px 1px 0 rgb(52, 73, 94),
+            2px 2px 0 rgb(52, 73, 94),
+            3px 3px 0 rgb(52, 73, 94),
+            4px 4px 0 rgb(52, 73, 94),
+            5px 5px 0 rgb(52, 73, 94),
+            6px 6px 0 rgb(52, 73, 94),
+            7px 7px 0 rgb(52, 73, 94)
+;
+}
+
+.field>input[type=text],
+.field>button {
+    display:block;
+    font:1.2em 'Montserrat Alternates';
+}
+
+.field>input[type=text] {
+    flex:1;
+    padding:0.6em;
+    border:0.2em solid rgb(52, 73, 94);
+}
+
+.field>button {
+    padding:0.6em 0.8em;
+    background-color:rgb(52, 73, 94);
+    color:white;
+    border:none;
+}
+
+div#searchform{
+    position: relative;
+}
+ul#results > li{
+    position: relative;
+    padding: 0.6em;
+    margin: 3px;
+    bottom:-30px;
+    left:0;
+    list-style: none;
+    background: white;
+}
+
+div#results {
+    padding: 10px;
+}
+
+div#results > a.qresult{
+    padding: 10px;
+    display: inline-block;
+    background: white;
+    margin: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+    padding-right: 50px;
+    transition: all 0.3s ease;
+}
+
+div#results > a.qresult:before{
+    content: "\f067";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    /*--adjust as necessary--*/
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #34495E;
+    transition: all 0.3s ease;
+}
+
+div#results > a.selected:before{
+    content: "\f00d";
+    color: red;
+    top:5px;
+    right:5px;
+    transition: all 0.3s ease;
+}
+
+div.resultsBox{
+    width:70%;
+    margin: 0 auto;
+}
+
+.hidden{
+    display: none;
+}
