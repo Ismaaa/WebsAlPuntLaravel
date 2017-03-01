@@ -27,11 +27,6 @@ class Ingredient extends Model
 
     public function recepta()
     {
-        return $this->hasMany(Recepta::class);
-    }
-
-    public function ingredientRecepta()
-    {
-        return $this->hasMany(IngredientsReceptes::class);
-    }        
+        return $this->hasMany(IngredientsReceptes::class, 'recipeid');
+    }    
 }
