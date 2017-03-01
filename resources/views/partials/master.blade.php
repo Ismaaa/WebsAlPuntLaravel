@@ -7,6 +7,11 @@
     {!! Html::style('css/estil.css') !!}
 </head>
 <body>
+<header>
+    <div class="headerBox">
+
+    </div>
+</header>
 <div id="content">
 	@yield('contingut')
 </div>
