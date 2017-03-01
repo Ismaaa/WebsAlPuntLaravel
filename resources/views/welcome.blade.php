@@ -85,6 +85,7 @@
                 <div class="links">
                     {{ Html::linkAction('ReceptesController@prova', 'mostrar receptes') }}
                     {{ Html::linkAction('ReceptesController@tot', 'Mostrar tot') }}
+                    {{ Html::linkAction('ReceptesController@vistaBuscar', 'Buscar receptes') }}
                 </div>
             </div>
         </div>

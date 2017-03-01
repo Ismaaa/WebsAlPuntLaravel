@@ -25,13 +25,4 @@ class IngredientsReceptes extends Model
        
     ];
 
-    public function recepta()
-    {
-        return $this->hasMany(Recepta::class);
-    }
-
-    public function ingredient()
-    {
-        return $this->hasMany(Ingredient::class);
-    }
 }

@@ -17,3 +17,10 @@ Route::get('/', function () {
 
 Route::get('prova','ReceptesController@prova');
 Route::get('tot', 'ReceptesController@tot');
+
+Route::get('busqueda', 'ReceptesController@vistaBuscar');
+Route::get('buscar', 
+	[
+		'uses' => 'ReceptesController@busqueda',
+		'as' => 'receptes.buscar'
+	]);
