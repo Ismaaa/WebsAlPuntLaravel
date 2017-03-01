@@ -4,16 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Recepta extends Model
+class Ingredient extends Model
 {
-	protected $table = 'recipe';
+	protected $table = 'ingredient';
 	 /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'time', 'diners', 'directions', 'img', 'font'
+        'name', 'plural', 'alias',
     ];
 
     /**
@@ -25,13 +25,13 @@ class Recepta extends Model
        
     ];
 
-    public function ingredient()
+    public function recepta()
     {
-        return $this->hasMany(Ingredient::class, 'id');
+        return $this->hasMany(Recepta::class);
     }
 
     public function ingredientRecepta()
     {
-        return $this->hasMany(IngredientsReceptes::class, 'recipeid');
-    }    
+        return $this->hasMany(IngredientsReceptes::class);
+    }        
 }

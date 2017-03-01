@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('prova','ReceptesController@prova');
+Route::get('tot', 'ReceptesController@tot');
