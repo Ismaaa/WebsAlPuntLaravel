@@ -21,6 +21,7 @@
 
                 <div class="links">
                     {{ Html::linkAction('ReceptesController@prova', 'mostrar receptes') }}
+                    {{ Html::linkAction('ReceptesController@tot', 'Mostrar tot') }}
                 </div>
             </div>
         </div>
