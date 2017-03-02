@@ -15,12 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*  PROVES */
 Route::get('prova','ReceptesController@prova');
 Route::get('tot', 'ReceptesController@tot');
 
+/* BUSQUEDA */
 Route::get('busqueda', 'ReceptesController@vistaBuscar');
 Route::get('buscar', 
 	[
 		'uses' => 'ReceptesController@busqueda',
 		'as' => 'receptes.buscar'
 	]);
+
+/* RUTES D'AUTENTICACIO */
+Auth::routes();
+Route::get('/home', 'HomeController@index');
