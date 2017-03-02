@@ -39,10 +39,27 @@ Route::group(['prefix' => 'gestio', 'middleware' => ['auth']], function () {
         'as' => 'admin.tauler'
     ]);
 
-    Route::get('/receptes/afegir', [
-        'uses' => 'ReceptesController@afegir',
-        'as' => 'receptes.afegir'
+    Route::get('receptes', [
+        'uses' => 'ReceptesController@tot',
+        'as' => 'admin.tauler'
     ]);
+
+    Route::get('/receptes/crear', [
+        'uses' => 'ReceptesController@vistaCrearRecepta',
+        'as' => 'vista.crear.recepta'
+    ]);
+
+    Route::post('/receptes/afegir', [
+        'uses' => 'ReceptesController@afegirRecepta',
+        'as' => 'afegir.recepta'
+    ]);
+/*
+    Route::get('/receptes/esborrar', [
+        'uses' => 'ReceptesController@esborrarRecepta',
+        'as' => 'esborrar.recepta'
+    ]);*/
+
+    Route::get('/receptes/esborrar/{id}', 'ReceptesController@esborrarRecepta');
 
 });
 

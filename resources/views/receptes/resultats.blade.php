@@ -36,6 +36,12 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                    @php
+                        $anterior=null;
+                    @endphp
+
+
                     @foreach($ingredients as $ingredient)
                         <tr>
                             <td>
@@ -47,11 +53,15 @@
                             <td>
                                 @foreach($receptes as $recepta)
                                     @foreach($receptesIngredients as $RecIng)
-                                        @if($RecIng->ingredientid==$ingredient->id)
+                                        @if($ingredient->id==$RecIng->ingredientid&&$recepta->name!=$anterior)
                                             <span class="label label-primary" style="font-size: larger;">
                                                 {{ $recepta->name }}
+                                                @php
+                                                     $anterior=$recepta->name;
+                                                @endphp   
                                             </span>
-                                        @endif
+                                            <br>
+                                        @endif                                     
                                     @endforeach
                                 @endforeach
                             </td>

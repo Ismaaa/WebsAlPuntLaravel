@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recepta extends Model
 {
+    public $timestamps = false;
 	protected $table = 'recipe';
 	 /**
      * The attributes that are mass assignable.

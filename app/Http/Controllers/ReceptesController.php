@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Ingredient;
 use App\IngredientsReceptes;
 use App\Recepta;
+use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,59 @@ class ReceptesController extends Controller
     	return view('admins.tauler', compact('receptes', 'ingredients', 'ingredientsReceptes'));
     }
 
+    public function vistaCrearRecepta()
+    {
+        $ingredients = Ingredient::pluck('name', 'id'); // Els agafem per nom
+        return view('receptes.crear')->with('ingredients', $ingredients);   
+    }
+
+    public function afegirRecepta(Request $request)
+    {
+        //dd($request->ingredients);
+        $recepta = new Recepta;
+
+/*
+        $recepta->name = $request->name;
+        $recepta->time = $request->time;
+        $recepta->diners = $request->diners;
+        $recepta->directions = $request->directions;
+        $recepta->img = $request->img;
+        $recepta->font = $request->font;
+        */
+
+        $recepta->fill($request->all());
+
+        if($request->hasFile('img'))
+        {
+            $imatge = $request->file('img');
+            $nomfitxer = time() . '.' . $imatge->getClientOriginalExtension();
+            Image::make($imatge)->resize(300, 300)->save( public_path('receptes\imatges' . $nomfitxer));
+            $recepta->img = $nomfitxer;
+        }
+
+        //dd($recepta);
+        //dd($request);
+        $recepta->save();
+
+        foreach ($request->ingredients as $ingredient) {
+            $RecIng = new IngredientsReceptes;
+            $RecIng->recipeid = $recepta->id;
+            $RecIng->ingredientid = $ingredient;
+            $RecIng->save();
+        }
+
+
+        return redirect()->action('ReceptesController@tot');
+    }
     
+    public function esborrarRecepta($id)
+    {
+        //dd($id);
+        $recepta = Recepta::find($id);
+        //dd($recepta);
+        $recepta->destroy($id);
+        return redirect()->action('ReceptesController@tot');
+    }
 
     public function vistaBuscar()
     {

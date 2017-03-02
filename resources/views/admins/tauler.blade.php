@@ -37,6 +37,9 @@
                                     <th>
                                         Font
                                     </th>
+                                    <th>
+                                        Esborrar
+                                    </th>                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,6 +70,16 @@
                                         </td>
                                         <td>
                                             {{ $recepta->font }}
+                                        </td>
+                                        <td>
+                                            <a href="{{ url('gestio/receptes/esborrar', [ $recepta->id ]) }}">
+                                            <button class="btn btn-danger">
+                                                Esborrar
+                                            </button>
+                                            
+                                            </a>
+                                        
+
                                         </td>
                                     </tr>
                                 @endforeach
