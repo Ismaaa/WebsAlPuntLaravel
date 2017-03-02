@@ -1,5 +1,4 @@
 # WebsAlPuntLaravel
-
 ###1 – Qui ha fet el lloc web: nom del domini, nom de l’equip, curs i escola.
 - unitedcode.cat
 - United code
