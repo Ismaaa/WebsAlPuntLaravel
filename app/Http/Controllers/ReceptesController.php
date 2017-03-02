@@ -27,6 +27,8 @@ class ReceptesController extends Controller
     	return view('admins.tauler', compact('receptes', 'ingredients', 'ingredientsReceptes'));
     }
 
+    
+
     public function vistaBuscar()
     {
         return view('receptes.busqueda');
