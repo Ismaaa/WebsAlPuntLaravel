@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ingredient extends Model
 {
+    public $timestamps = false;
 	protected $table = 'ingredient';
 	 /**
      * The attributes that are mass assignable.
