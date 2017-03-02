@@ -38,5 +38,11 @@ Route::group(['prefix' => 'gestio', 'middleware' => ['auth']], function () {
         'uses' => 'ReceptesController@tot',
         'as' => 'admin.tauler'
     ]);
+
+    Route::get('/receptes/afegir', [
+        'uses' => 'ReceptesController@afegir',
+        'as' => 'receptes.afegir'
+    ]);
+
 });
 
