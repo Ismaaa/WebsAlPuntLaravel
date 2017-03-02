@@ -17,10 +17,8 @@
         <![endif]-->
     </head>
     <body>
-        <h1 class="text-center jumbotron">Mini backend de lectura</h1>
         <div class="col-md-2"></div>
         <div class="panel-group col-md-8">
-
             <div class="panel panel-primary">
             <div class="panel-heading">Resultats</div>
                 <table class="table table-striped table-hover table-responsive">
@@ -64,12 +62,6 @@
             </div>
         </div>
         <div class="col-md-2"></div>
-        <!-- jQuery -->
-        <script src="//code.jquery.com/jquery.js"></script>
-        <!-- Bootstrap JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="Hello World"></script>
     </body>
 </html>
 
