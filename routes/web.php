@@ -30,3 +30,13 @@ Route::get('buscar',
 /* RUTES D'AUTENTICACIO */
 Auth::routes();
 Route::get('/home', 'HomeController@index');
+
+/* ADMINS */
+Route::group(['prefix' => 'gestio', 'middleware' => ['auth']], function () {
+
+    Route::get('/', [
+        'uses' => 'ReceptesController@tot',
+        'as' => 'admin.tauler'
+    ]);
+});
+

@@ -24,7 +24,7 @@ class ReceptesController extends Controller
     	$ingredients = Ingredient::all();
     	$ingredientsReceptes = IngredientsReceptes::all();
 
-    	return view('provesIsma.tot', compact('receptes', 'ingredients', 'ingredientsReceptes'));
+    	return view('admins.tauler', compact('receptes', 'ingredients', 'ingredientsReceptes'));
     }
 
     public function vistaBuscar()
