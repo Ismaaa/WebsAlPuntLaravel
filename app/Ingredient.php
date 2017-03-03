@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ingredient extends Model
 {
+    public $timestamps = false;
 	protected $table = 'ingredient';
 	 /**
      * The attributes that are mass assignable.
@@ -27,11 +28,6 @@ class Ingredient extends Model
 
     public function recepta()
     {
-        return $this->hasMany(Recepta::class);
-    }
-
-    public function ingredientRecepta()
-    {
-        return $this->hasMany(IngredientsReceptes::class);
-    }        
+        return $this->hasMany(IngredientsReceptes::class, 'recipeid');
+    }    
 }
