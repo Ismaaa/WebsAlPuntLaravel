@@ -24,10 +24,10 @@ class Ingredient extends Model
      */
     protected $hidden = [
        
-    ];
+    ]; 
 
-    public function recepta()
+    public function receptes()
     {
-        return $this->hasMany(IngredientsReceptes::class, 'recipeid');
-    }    
+        return $this->hasMany('App\IngredientsReceptes', 'ingredientid');
+    }
 }
