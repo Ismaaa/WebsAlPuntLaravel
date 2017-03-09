@@ -22,10 +22,13 @@
 
 
     {!! Html::style('css/estil.css') !!}
-	 
+    <!-- Styles -->
+    <link href="{{ asset('plugins/sweetalert/dist/sweetalert.css') }}" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="{{ asset('plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
 </head>
 <body>
-<section class="content">
+@include('sweet::alert') 
     <div class="container">
         <div class="row">
             @yield('contingut')
