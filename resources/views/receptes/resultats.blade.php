@@ -51,7 +51,7 @@
                                 </td>
                                 <td>
                                     @foreach($ingredient->receptes as $recepta)
-                                        <a href="/gestio/receptes/{{ $relacionada->id }}">
+                                        <a href="/receptes/{{ $recepta->recipeid }}">
                                             @php
                                                 $noms = App\Recepta::find($recepta->recipeid)
                                                 //$recepta->recipeid
