@@ -51,14 +51,16 @@
                                 </td>
                                 <td>
                                     @foreach($ingredient->receptes as $recepta)
-                                        @php
-                                            $noms = App\Recepta::find($recepta->recipeid)
-                                            //$recepta->recipeid
-                                        @endphp
-                                            <label class="label label-primary">
-                                                {{ $noms->name }}
-                                            </label>
-                                            <br>
+                                        <a href="/receptes/{{ $recepta->recipeid }}">
+                                            @php
+                                                $noms = App\Recepta::find($recepta->recipeid)
+                                                //$recepta->recipeid
+                                            @endphp
+                                                <label class="label label-primary" style="cursor:pointer">
+                                                    {{ $noms->name }}
+                                                </label>
+                                                <br>
+                                        </a>
                                     @endforeach
                                 </td>
                             </tr>

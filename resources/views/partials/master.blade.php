@@ -20,7 +20,7 @@
 			]) !!};
 	</script>
 
-
+	  {!! Html::script('js/jquery-3.1.1.min.js') !!}
     {!! Html::style('css/estil.css') !!}
     <!-- Styles -->
     <link href="{{ asset('plugins/sweetalert/dist/sweetalert.css') }}" rel="stylesheet">

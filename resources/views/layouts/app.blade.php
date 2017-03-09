@@ -12,8 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('plugins/sweetalert/dist/sweetalert.css') }}" rel="stylesheet">
     <!-- Scripts -->
+    <script src="{{ asset('plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
+
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -21,6 +23,7 @@
     </script>
 </head>
 <body>
+    @include('sweet::alert')
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">

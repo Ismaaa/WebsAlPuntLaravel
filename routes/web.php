@@ -27,6 +27,11 @@ Route::get('buscar',
 		'as' => 'receptes.buscar'
 	]);
 
+Route::get('/receptes/{id}', [
+    'uses' => 'ReceptesController@vistaVeureRecepta',
+    'as' => 'vista.veure.recepta'
+]);   
+
 /* RUTES D'AUTENTICACIO */
 Auth::routes();
 Route::get('/home', 'HomeController@index');
@@ -37,12 +42,7 @@ Route::group(['prefix' => 'gestio', 'middleware' => ['auth']], function () {
     Route::get('/', [
         'uses' => 'ReceptesController@tot',
         'as' => 'admin.tauler'
-    ]);
-
-    Route::get('/receptes/{id}', [
-        'uses' => 'ReceptesController@vistaVeureRecepta',
-        'as' => 'vista.veure.recepta'
-    ]);    
+    ]); 
 
     Route::get('receptes', [
         'uses' => 'ReceptesController@tot',

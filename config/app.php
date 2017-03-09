@@ -181,6 +181,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
     ],
 
     /*
@@ -234,6 +235,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];

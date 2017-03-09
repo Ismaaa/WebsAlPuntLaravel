@@ -9,9 +9,7 @@ use App\Recepta;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Collection;
-
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Alert;
 
 class ReceptesController extends Controller
 {
@@ -35,13 +33,16 @@ class ReceptesController extends Controller
     {
         //dd($id);
         $recepta = Recepta::find($id);
-        $relacionades = Recepta::where('id', '!=', $id)->inRandomOrder()->take(4)->get();;
+        $relacionades = Recepta::where('id', '!=', $id)->inRandomOrder()->take(5)->get();;
 
         if ($recepta && $relacionades) 
         {
             return view('receptes.recepta', compact('recepta', 'relacionades'));
-        } else {
-            return redirect('/');
+        } 
+        else {
+            Alert::warning('No s\'ha trobat aquesta recepta, utilitza el nostre buscador :)')->persistent("D'acord!");
+            //return redirect()->action('ReceptesController@vistaBuscar');
+            return view('welcome');
         }
     }
 
@@ -129,6 +130,12 @@ class ReceptesController extends Controller
         //$asd = collect(json_decode($ingredients))->where('id', 2);
         //dd($asd);
         $receptesIngredients = IngredientsReceptes::all();
+
+        if($ingredients->isEmpty() || $receptes->isEmpty() || $receptesIngredients->isEmpty())
+        {
+            Alert::info('No hem trobat cap resultat, torna a provar-ho')->persistent("D'acord!");
+            return view('welcome');
+        }
 
         //dd($ingredients);
         //$ingredients = DB::table('ingredient')->where('name', 'like', "%$ingredients}")->get();
