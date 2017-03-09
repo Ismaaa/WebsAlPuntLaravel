@@ -9,9 +9,6 @@ use App\Recepta;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Collection;
-
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ReceptesController extends Controller
 {
