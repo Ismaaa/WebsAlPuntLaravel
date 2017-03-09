@@ -56,7 +56,7 @@
                                                 $noms = App\Recepta::find($recepta->recipeid)
                                                 //$recepta->recipeid
                                             @endphp
-                                                <label class="label label-primary">
+                                                <label class="label label-primary" style="cursor:pointer">
                                                     {{ $noms->name }}
                                                 </label>
                                                 <br>

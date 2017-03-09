@@ -12,9 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/sweetalert/sweetalert.css') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/sweetalert/dist/sweetalert.css') }}" rel="stylesheet">
     <!-- Scripts -->
-    <script src="{{ asset('plugins/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
 
     <script>
         window.Laravel = {!! json_encode([

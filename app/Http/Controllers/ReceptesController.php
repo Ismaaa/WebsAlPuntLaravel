@@ -37,13 +37,12 @@ class ReceptesController extends Controller
 
         if ($recepta && $relacionades) 
         {
-
             return view('receptes.recepta', compact('recepta', 'relacionades'));
         } 
         else {
-
-            Alert::message('Message', 'Optional Title');
-            return redirect('/')->with('success', 'Profile updated!');
+            Alert::warning('No s\'ha trobat aquesta recepta, utilitza el nostre buscador :)')->persistent("D'acord!");
+            //return redirect()->action('ReceptesController@vistaBuscar');
+            return view('welcome');
         }
     }
 
@@ -131,6 +130,12 @@ class ReceptesController extends Controller
         //$asd = collect(json_decode($ingredients))->where('id', 2);
         //dd($asd);
         $receptesIngredients = IngredientsReceptes::all();
+
+        if($ingredients->isEmpty() || $receptes->isEmpty() || $receptesIngredients->isEmpty())
+        {
+            Alert::info('No hem trobat cap resultat, torna a provar-ho')->persistent("D'acord!");
+            return view('welcome');
+        }
 
         //dd($ingredients);
         //$ingredients = DB::table('ingredient')->where('name', 'like', "%$ingredients}")->get();
