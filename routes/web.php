@@ -39,6 +39,11 @@ Route::group(['prefix' => 'gestio', 'middleware' => ['auth']], function () {
         'as' => 'admin.tauler'
     ]);
 
+    Route::get('/receptes/{id}', [
+        'uses' => 'ReceptesController@vistaVeureRecepta',
+        'as' => 'vista.veure.recepta'
+    ]);    
+
     Route::get('receptes', [
         'uses' => 'ReceptesController@tot',
         'as' => 'admin.tauler'
