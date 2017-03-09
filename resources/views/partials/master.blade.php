@@ -28,7 +28,8 @@
     <script src="{{ asset('plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
 </head>
 <body>
-@include('sweet::alert') 
+@include('sweet::alert')    
+<section class="content">
     <div class="container">
         <div class="row">
             @yield('contingut')
