@@ -9,6 +9,7 @@ use App\Recepta;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Alert;
 
 class ReceptesController extends Controller
 {
@@ -32,13 +33,17 @@ class ReceptesController extends Controller
     {
         //dd($id);
         $recepta = Recepta::find($id);
-        $relacionades = Recepta::where('id', '!=', $id)->inRandomOrder()->take(4)->get();;
+        $relacionades = Recepta::where('id', '!=', $id)->inRandomOrder()->take(5)->get();;
 
         if ($recepta && $relacionades) 
         {
+
             return view('receptes.recepta', compact('recepta', 'relacionades'));
-        } else {
-            return redirect('/');
+        } 
+        else {
+
+            Alert::message('Message', 'Optional Title');
+            return redirect('/')->with('success', 'Profile updated!');
         }
     }
 

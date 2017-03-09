@@ -35,7 +35,7 @@
 				<div class="card-block">
 			    	<h4 class="card-title">{{ $relacionades->first()->name }}</h4>
 			    	<p class="card-text">Durada: {{ $relacionades->first()->time }}</p>
-			    	<a href="/gestio/receptes/{{ $relacionades->first()->id }}" class="btn btn-primary">Veure recepta</a>
+			    	<a href="/receptes/{{ $relacionades->first()->id }}" class="btn btn-primary">Veure recepta</a>
 			  </div>
 			</div>
 		</div>
@@ -47,12 +47,14 @@
 		
 	</div>
 	@foreach($relacionades as $relacionada)
-		<div class="row col-md-3">
-			<a href="/gestio/receptes/{{ $relacionada->id }}">
-				<img class="thumbnail" src="http://placehold.it/250x150" width="250" height="150">
-		    		{{ $relacionada->name }}
-	    	</a>
-		</div>
+		@if(!$loop->first)
+			<div class="row col-md-3">
+				<a href="/receptes/{{ $relacionada->id }}">
+					<img class="thumbnail" src="http://placehold.it/250x150" width="250" height="150">
+			    		{{ $relacionada->name }}
+		    	</a>
+			</div>
+		@endif
 	@endforeach
 
 	<div class="jumbotron col-md-12 text-center">
