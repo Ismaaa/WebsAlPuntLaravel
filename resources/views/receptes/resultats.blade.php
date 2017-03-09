@@ -37,36 +37,32 @@
                     </thead>
                     <tbody>
 
-                    @php
-                        $anterior=null;
-                    @endphp
+                        @php
+                            $anterior=null;
+                        @endphp
 
-
-                    @foreach($ingredients as $ingredient)
-                        <tr>
-                            <td>
-                                {{ $ingredient->id }}
-                            </td>
-                            <td>
-                                {{ $ingredient->name }}
-                            </td>
-                            <td>
-                                @foreach($receptes as $recepta)
-                                    @foreach($receptesIngredients as $RecIng)
-                                        @if($ingredient->id==$RecIng->ingredientid&&$recepta->name!=$anterior)
-                                            <span class="label label-primary" style="font-size: larger;">
-                                                {{ $recepta->name }}
-                                                @php
-                                                     $anterior=$recepta->name;
-                                                @endphp   
-                                            </span>
+                        @foreach($ingredients as $ingredient)
+                            <tr>
+                                <td>
+                                    {{ $loop->iteration }}
+                                </td>
+                                <td>
+                                    {{ $ingredient->name }}
+                                </td>
+                                <td>
+                                    @foreach($ingredient->receptes as $recepta)
+                                        @php
+                                            $noms = App\Recepta::find($recepta->recipeid)
+                                            //$recepta->recipeid
+                                        @endphp
+                                            <label class="label label-primary">
+                                                {{ $noms->name }}
+                                            </label>
                                             <br>
-                                        @endif                                     
                                     @endforeach
-                                @endforeach
-                            </td>
-                        </tr>
-                    @endforeach
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

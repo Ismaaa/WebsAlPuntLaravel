@@ -26,4 +26,14 @@ class IngredientsReceptes extends Model
        
     ];
 
+    public function receptes()
+    {
+        return $this->belongsTo(Recepta::class, 'recipeid');
+    }
+
+    public function ingredients()
+    {
+        return $this->belongsTo(Ingredient::class, 'ingredientid');
+    }
+
 }

@@ -10,7 +10,7 @@
                 <div class="panel-body">
                 	
 
-<div class="panel-heading">Emplena tots els camps, tots són obligatoris</div>
+            <div class="panel-heading">Emplena tots els camps, tots són obligatoris</div>
                 <div class="panel-body">
                     {!! Form::open(['url' => '/gestio/receptes/afegir', 'files' => true, 'method' => 'POST', 'class' => 'form-horizontal']) !!}
                     {{ csrf_field() }}

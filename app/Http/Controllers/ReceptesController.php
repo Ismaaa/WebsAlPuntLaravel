@@ -9,6 +9,9 @@ use App\Recepta;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
+
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ReceptesController extends Controller
 {
@@ -26,6 +29,20 @@ class ReceptesController extends Controller
     	$ingredientsReceptes = IngredientsReceptes::all();
 
     	return view('admins.tauler', compact('receptes', 'ingredients', 'ingredientsReceptes'));
+    }
+
+    public function vistaVeureRecepta($id)
+    {
+        //dd($id);
+        $recepta = Recepta::find($id);
+        $relacionades = Recepta::where('id', '!=', $id)->inRandomOrder()->take(4)->get();;
+
+        if ($recepta && $relacionades) 
+        {
+            return view('receptes.recepta', compact('recepta', 'relacionades'));
+        } else {
+            return redirect('/');
+        }
     }
 
     public function vistaCrearRecepta()
