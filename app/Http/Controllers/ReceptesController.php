@@ -42,7 +42,7 @@ class ReceptesController extends Controller
         else {
             Alert::warning('No s\'ha trobat aquesta recepta, utilitza el nostre buscador :)')->persistent("D'acord!");
             //return redirect()->action('ReceptesController@vistaBuscar');
-            return view('welcome');
+            return redirect('/');
         }
     }
 
@@ -131,10 +131,10 @@ class ReceptesController extends Controller
         //dd($asd);
         $receptesIngredients = IngredientsReceptes::all();
 
-        if($ingredients->isEmpty() || $receptes->isEmpty() || $receptesIngredients->isEmpty())
+        if($ingredients->count()==0)
         {
             Alert::info('No hem trobat cap resultat, torna a provar-ho')->persistent("D'acord!");
-            return view('welcome');
+            return redirect('/');
         }
 
         //dd($ingredients);
