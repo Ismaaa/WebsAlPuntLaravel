@@ -1,5 +1,7 @@
 <?php
 
+use App\Ingredient;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $ingredients = Ingredient::all();
+
+    return view('welcome')->with('ingredients', $ingredients);
 });
 
 /*  PROVES */
@@ -21,7 +25,7 @@ Route::get('tot', 'ReceptesController@tot');
 
 /* BUSQUEDA */
 Route::get('busqueda', 'ReceptesController@vistaBuscar');
-Route::get('buscar', 
+Route::get('buscar',
 	[
 		'uses' => 'ReceptesController@busqueda',
 		'as' => 'receptes.buscar'
@@ -30,7 +34,7 @@ Route::get('buscar',
 Route::get('/receptes/{id}', [
     'uses' => 'ReceptesController@vistaVeureRecepta',
     'as' => 'vista.veure.recepta'
-]);   
+]);
 
 /* RUTES D'AUTENTICACIO */
 Auth::routes();
@@ -42,7 +46,7 @@ Route::group(['prefix' => 'gestio', 'middleware' => ['auth']], function () {
     Route::get('/', [
         'uses' => 'ReceptesController@tot',
         'as' => 'admin.tauler'
-    ]); 
+    ]);
 
     Route::get('receptes', [
         'uses' => 'ReceptesController@tot',
@@ -67,4 +71,3 @@ Route::group(['prefix' => 'gestio', 'middleware' => ['auth']], function () {
     Route::get('/receptes/esborrar/{id}', 'ReceptesController@esborrarRecepta');
 
 });
-
