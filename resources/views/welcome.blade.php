@@ -18,7 +18,6 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
                 <div class="links">
                     {{ Html::linkAction('ReceptesController@vistaBuscar', 'Buscar receptes') }}
                 </div>
