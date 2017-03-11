@@ -10,7 +10,7 @@
 					<h4 class="card-title">
 						{{ $recepta->name }}
 					</h4>			  	
-					<img class="card-img-bottom" src="http://placehold.it/600x300" width="600" height="300">
+					<img class="card-img-bottom" src="{{ $recepta->img }}" width="600" height="300">
 					<ul>
 							
 					</ul>	
@@ -53,7 +53,7 @@
 		<div class="row col-md-2">
 			<h3>També et pot interessar...</h3>
 			<div class="card" style="width: 20rem;">
-				<img class="card-img-bottom" src="http://placehold.it/250x150" width="250" height="150">
+				<img class="card-img-bottom" src="{{ $relacionades->first()->img }}" width="250" height="150">
 				<div class="card-block">
 			    	<h4 class="card-title">{{ $relacionades->first()->name }}</h4>
 			    	<p class="card-text">Durada: {{ $relacionades->first()->time }}</p>
@@ -72,7 +72,7 @@
 		@if(!$loop->first)
 			<div class="row col-md-3">
 				<a href="/receptes/{{ $relacionada->id }}">
-					<img class="thumbnail" src="http://placehold.it/250x150" width="250" height="150">
+					<img class="thumbnail" src="{{ $relacionada->img }}" width="250" height="150">
 			    		{{ $relacionada->name }}
 		    	</a>
 			</div>

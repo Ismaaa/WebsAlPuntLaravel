@@ -73,16 +73,17 @@ class ReceptesController extends Controller
         $recepta->img = $request->img;
         $recepta->font = $request->font;
         */
-
+       
         $recepta->fill($request->all());
 
+        /*
         if($request->hasFile('img'))
         {
             $imatge = $request->file('img');
             $nomfitxer = time() . '.' . $imatge->getClientOriginalExtension();
             Image::make($imatge)->resize(300, 300)->save( public_path('receptes\imatges' . $nomfitxer));
             $recepta->img = $nomfitxer;
-        }
+        }*/
 
         //dd($recepta);
         //dd($request);

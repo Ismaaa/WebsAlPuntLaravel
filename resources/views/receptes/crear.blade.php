@@ -37,7 +37,7 @@
                         <div class="form-group">
                             {!! Form::label('diners', 'Diners', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::number('diners', null, ['class' => 'form-control','placeholder' => '3', 'required']) !!}
+                                {!! Form::number('diners', null, ['class' => 'form-control','placeholder' => '3']) !!}
                             </div>
                         </div>
                     </div>                      
@@ -56,7 +56,7 @@
                         <div class="form-group">
                             {!! Form::label('img', 'Img', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                               {!! Form::file('img', null, ['class' => 'form-control']) !!}
+                               {!! Form::text('img', null, ['class' => 'form-control', 'placeholder' => 'www.wikipedia.com/images/hola.png']) !!}
                             </div>
                         </div>
                     </div>    
