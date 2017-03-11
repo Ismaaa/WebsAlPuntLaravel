@@ -11,6 +11,15 @@
 						{{ $recepta->name }}
 					</h4>			  	
 					<img class="card-img-bottom" src="http://placehold.it/600x300" width="600" height="300">
+					<ul>
+							
+					</ul>	
+					<ul>
+						@foreach($ingredients as $ingredient)
+							<span class="glyphicon glyphicon-check" aria-hidden="true" style="color: green;" )></span>
+							<span style="color: #3097D1; font-weight: bold;">{{ ($ingredient->ingredients->plural) }}</span>
+						@endforeach
+					</ul>				
 					<p class="card-text">
 						{{ $recepta->directions }}
 					</p>

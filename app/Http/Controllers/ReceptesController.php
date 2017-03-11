@@ -33,11 +33,16 @@ class ReceptesController extends Controller
     {
         //dd($id);
         $recepta = Recepta::find($id);
+        $ingredients = IngredientsReceptes::where('recipeid', '=', $id)->get();
+        //$ingredients = DB::table('recipeingredients')->where('recipeid', '=', $id)->get();
+        //$users = DB::table('users')->where('votes', '=', 100)->get();
+        //dd($ingredients);
+
         $relacionades = Recepta::where('id', '!=', $id)->inRandomOrder()->take(5)->get();;
 
         if ($recepta && $relacionades) 
         {
-            return view('receptes.recepta', compact('recepta', 'relacionades'));
+            return view('receptes.recepta', compact('recepta', 'relacionades', 'ingredients'));
         } 
         else {
             Alert::warning('No s\'ha trobat aquesta recepta, utilitza el nostre buscador :)')->persistent("D'acord!");
@@ -54,6 +59,7 @@ class ReceptesController extends Controller
 
     public function afegirRecepta(Request $request)
     {
+        dd($request);
         //dd($request->ingredients);
         $recepta = new Recepta;
 
