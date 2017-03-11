@@ -59,10 +59,12 @@ class ReceptesController extends Controller
 
     public function afegirRecepta(Request $request)
     {
-        dd($request);
+        //dd($request);
         //dd($request->ingredients);
         $recepta = new Recepta;
-
+        $quantitat = explode(" ",$request->quantitat);
+        $unitats = explode(" ",$request->unitat);
+        //dd($quantitat);
 /*
         $recepta->name = $request->name;
         $recepta->time = $request->time;
@@ -86,11 +88,15 @@ class ReceptesController extends Controller
         //dd($request);
         $recepta->save();
 
+        $pos=0;
         foreach ($request->ingredients as $ingredient) {
             $RecIng = new IngredientsReceptes;
             $RecIng->recipeid = $recepta->id;
             $RecIng->ingredientid = $ingredient;
+            $RecIng->quantity = $quantitat[$pos];
+            $RecIng->qty_units = $unitats[$pos];
             $RecIng->save();
+            $pos++;
         }
 
 

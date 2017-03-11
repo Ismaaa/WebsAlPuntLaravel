@@ -88,6 +88,25 @@
                         </div>     
 
                         <div class="form-group">
+                            <div class="form-group">
+                                {!! Form::label('quantitat', 'Quantitat **Ordenats segons has ingredients de dalt', ['class' => 'col-md-4 control-label']) !!}
+                                <div class="col-md-6">
+                                    {{ Form::text('quantitat', null) }}
+                                </div>
+                            </div>
+                        </div>         
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                {!! Form::label('unitats', 'Unitats **Ordenats segons has ingredients de dalt - gr, ml, unitats', ['class' => 'col-md-4 control-label']) !!}
+                                <div class="col-md-6">
+                                    {{ Form::text('unitat', null) }}
+                                </div>
+                            </div>
+                        </div>   
+                        
+
+                        <div class="form-group">
                             <div class="col-md-6">
                                 {!! Form::submit('Desar', ['class' => 'btn btn-primary']) !!}
                             </div>
