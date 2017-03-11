@@ -15,13 +15,16 @@ use App\Ingredient;
 
 Route::get('/', function () {
     $ingredients = Ingredient::all();
-
     return view('welcome')->with('ingredients', $ingredients);
 });
 
 /*  PROVES */
 Route::get('prova','ReceptesController@prova');
 Route::get('tot', 'ReceptesController@tot');
+
+Route::get('/receptes', function () {
+    return redirect('/');
+});
 
 /* BUSQUEDA */
 Route::get('busqueda', 'ReceptesController@vistaBuscar');

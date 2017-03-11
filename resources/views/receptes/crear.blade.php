@@ -46,7 +46,7 @@
                         <div class="form-group">
                             {!! Form::label('directions', 'Directions', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('directions', null, ['class' => 'form-control','placeholder' => 'Primer agafem el conill...', 'required']) !!}
+                                {!! Form::textarea('directions', null, ['class' => 'form-control','placeholder' => 'Primer agafem el conill...', 'required']) !!}
                             </div>
                         </div>
                     </div>   
