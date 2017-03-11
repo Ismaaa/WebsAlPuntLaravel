@@ -38,7 +38,7 @@
 					</p>
 					<p class="card-text">
 						<small class="text-muted">
-							Temps {{ $recepta->time }}
+							{{ substr($recepta->time, 0, -3) }}
 						</small>
 					</p>
 					<p class="card-text">
