@@ -16,6 +16,7 @@
     <div class="container">
         <div class="row">
             @yield('contingut')
+            <div style="margin-top: 100px;"></div>
             @include('receptes.busqueda')
 
 
