@@ -16,8 +16,12 @@
 					</ul>	
 					<ul>
 						@foreach($ingredients as $ingredient)
-							<span class="glyphicon glyphicon-check" aria-hidden="true" style="color: green;" )></span>
-							<span style="color: #3097D1; font-weight: bold;">{{ ($ingredient->ingredients->plural) }}</span>
+							<span class="glyphicon glyphicon-check" aria-hidden="true" style="color: green;"/></span>
+							<span style="color: #3097D1; font-weight: bold;">
+								<a href="/buscar?ingredients={{ $ingredient->ingredients->name }}">
+									{{ ($ingredient->ingredients->plural) }}
+								</a>
+							</span>
 						@endforeach
 					</ul>				
 					<p class="card-text">
