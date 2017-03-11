@@ -11,14 +11,30 @@
     <script src="{{ asset('plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
 </head>
 <body>
-@include('sweet::alert')    
+@include('sweet::alert')
 <section class="content">
     <div class="container">
         <div class="row">
             @yield('contingut')
             @include('receptes.busqueda')
+
+
+
         </div>
+
+				{{-- VUE --}}
+
+				<div id="app" class="form-group">
+				<multiselect
+						:options="{{ $ingredients->toJson() }}"
+						:selected.sync="selected"
+						:show-label="false"
+				 ></multiselect>
+				</div>
+
+				{{-- /VUE --}}
     </div>
+<script src="/js/app.js"></script>
 </section>
     <footer id="footer">
         <div class="container">
