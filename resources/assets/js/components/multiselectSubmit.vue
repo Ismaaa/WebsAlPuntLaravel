@@ -1,8 +1,7 @@
 <template>
-        <div>
-            <h1>{{title}}</h1>
+        <div class="multiselect">
             <!-- <form  method="post" enctype="multipart/form-data"> -->
-            <form method="GET"  action="http://unitedcode.local/buscar?" accept-charset="UTF-8">
+            <form method="GET"  action="/buscar?" accept-charset="UTF-8">
               <table>
                 <tr>
                   <td>
@@ -28,6 +27,12 @@
             </form>
         </div>
 </template>
+<style>
+div.multiselect table{
+  width: 70%;
+  margin: 0 auto;
+}
+</style>
 <script>
     import { Multiselect } from 'vue-multiselect';
     import axios from 'axios';
@@ -61,11 +66,6 @@
         },
         components: {Multiselect},
         props: {
-            title:{
-                type: String,
-                required: true,
-                default: 'title'
-            },
             placeholder:{
                 type: String,
                 required: true,
@@ -77,5 +77,4 @@
              }
         },
     }
-
 </script>

@@ -26,18 +26,7 @@
     <div class="container">
         <div class="row">
             @yield('contingut')
-            {{-- @include('receptes.busqueda') --}}
-						{{-- VUE --}}
-						<div id="app">
-            	<multiselect
-            	title = "Selecciona els teus ingredients"
-            	placeholder = "Selecciona mes d'un ingredient..."
-            	></multiselect>
-						{{--<multiselect :options="{{ $ingredients->toJson() }}" title="Ingredients"  ></multiselect>--}}
-						</div>
-						{{-- /VUE --}}
             <div style="margin-top: 100px;"></div>
-            {{--@include('receptes.busqueda')--}}
         </div>
     </div>
 <script src="/js/app.js"></script>

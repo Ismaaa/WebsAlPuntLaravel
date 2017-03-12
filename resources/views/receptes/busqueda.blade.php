@@ -3,11 +3,14 @@
 
 <h2 style="text-align: center" class="text-center">Cerca receptes introduïnt els aliments que tens al rebost.</h2>
 
-<div class="col-md-12 col-lg-12 col-sm-12">
+{{-- <div class="col-md-12 col-lg-12 col-sm-12">
     {!! Form::open(['route' => ['receptes.buscar', Auth::user()], 'method' => 'GET', 'class' => 'field', 'id' => 'searchform']) !!}
     {!! Form::text('ingredients', null, ['id' => 'searchterm','placeholder' => 'oli, tomaquet...']) !!}
     <button type="submit" id="search"><i class="glyphicon glyphicon-search"></i> Buscar</button>
     {!! Form::close() !!}
+</div> --}}
+<div id="app">
+  <multiselect placeholder = "Selecciona mes d'un ingredient..." ></multiselect>
 </div>
 
 <script src="//code.jquery.com/jquery.js"></script>
