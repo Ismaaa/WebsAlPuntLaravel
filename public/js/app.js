@@ -21619,6 +21619,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -21673,6 +21676,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     placeholder: {
       type: String,
       required: true,
+      default: 'placeholder'
+    },
+    selectLabel: {
+      type: String,
+      required: false,
+      default: 'placeholder'
+    },
+    deselectLabel: {
+      type: String,
+      required: false,
+      default: 'placeholder'
+    },
+    selectedLabel: {
+      type: String,
+      required: false,
       default: 'placeholder'
     },
     arr: {
@@ -41354,6 +41372,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "options": _vm.options,
       "placeholder": _vm.placeholder,
+      "select-label": _vm.selectLabel,
+      "deselect-label": _vm.deselectLabel,
+      "selected-label": _vm.selectedLabel,
       "multiple": true,
       "close-on-select": false,
       "searchable": true,
