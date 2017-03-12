@@ -19,28 +19,28 @@
 								<span class="glyphicon glyphicon-check" aria-hidden="true" style="color: green;"/></span>
 									<span style="color: #3097D1; font-weight: bold;">
 									<a href="/buscar?ingredients={{ $ingredient->ingredients->name }}">
-										@if($ingredient->qty_units=="unitats")
+										@if($ingredient->qty_units==null)
 											@if($ingredient->quantity!=null)
 												{{ $ingredient->quantity }}
-												-
+												- 
 											@endif
 											@if($ingredient->quantity > 1)
 												{{ ($ingredient->ingredients->plural) }}
 											@else
 												{{ ($ingredient->ingredients->name) }}
 											@endif
-
 										@else
-											{{ $ingredient->quantity }} {{ $ingredient->qty_units }}
-											-
+											@if($ingredient->quantity!=null)
+												{{ $ingredient->quantity }} {{ $ingredient->qty_units }}
+												- 
+											@endif
 											@if($ingredient->ingredients->plural && $ingredient->qty_units!=null)
 												{{ ($ingredient->ingredients->plural) }}
-											@elseif($ingredient->quantity > 1)
+											@elseif($ingredient->quantity > 1 && $ingredient->ingredients->plural!=null)
 												{{ ($ingredient->ingredients->plural) }}
 											@else
 												{{ ($ingredient->ingredients->name) }}
 											@endif
-
 										@endif
 									</a>
 								</span>
@@ -71,7 +71,7 @@
 					<img class="card-img-bottom" src="{{ $relacionades->first()->img }}" width="250" height="150">
 					<div class="card-block">
 						<h4 class="card-title">{{ $relacionades->first()->name }}</h4>
-						<p class="card-text">Durada: {{ $relacionades->first()->time }}</p>
+						<p class="card-text">Durada: {{ substr( $relacionades->first()->time, 0, -3) }} h</p>
 						<a href="/receptes/{{ $relacionades->first()->id }}" class="btn btn-primary">Veure recepta</a>
 				  </div>
 				</div>
