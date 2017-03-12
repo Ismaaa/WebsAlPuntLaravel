@@ -135,9 +135,9 @@ class ReceptesController extends Controller
         
         $ingredients = Ingredient::where(function ($q) use ($buscarIngredients) {
           foreach ($buscarIngredients as $ingredient) {
-            $q->orWhere('name', 'like', "%{$ingredient}%")
+            $q->orWhere('name', '=', "$ingredient")/*
             ->orWhere('plural', 'like', "%{$ingredient}%")
-            ->orWhere('alias', 'like', "%{$ingredient}%");
+            ->orWhere('alias', 'like', "%{$ingredient}%")*/;
           }
         })->get();
 
