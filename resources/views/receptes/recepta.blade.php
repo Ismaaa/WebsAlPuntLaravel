@@ -20,13 +20,24 @@
 								<span style="color: #3097D1; font-weight: bold;">
 								<a href="/buscar?ingredients={{ $ingredient->ingredients->name }}">
 									@if($ingredient->qty_units=="unitats")
-										{{ $ingredient->quantity }}
-										- 
-										{{ ($ingredient->ingredients->plural) }}
+										@if($ingredient->quantity!=null)
+											{{ $ingredient->quantity }}
+											- 
+										@endif
+										@if($ingredient->quantity > 1)
+											{{ ($ingredient->ingredients->plural) }}
+										@else
+											{{ ($ingredient->ingredients->name) }}
+										@endif
 									@else
 										{{ $ingredient->quantity }} {{ $ingredient->qty_units }}
 										- 
-										{{ ($ingredient->ingredients->name) }}
+										@if($ingredient->ingredients->plural && $ingredient->qty_units!=null)
+											{{ ($ingredient->ingredients->plural) }}
+										@else
+											{{ ($ingredient->ingredients->name) }}
+										@endif
+										
 									@endif
 								</a>
 							</span>
