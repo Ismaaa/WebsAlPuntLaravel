@@ -25,4 +25,11 @@ class IngredientsController extends Controller
         return json_encode($ingredients);
 
     }
+    public function consulta($query){
+      $res = DB::table('ingredient')->where('name', 'like', "%{$query}%")
+      ->orWhere('alias', 'like', "%{$query}%")
+      ->orWhere('plural', 'like', "%{$query}%")
+      ->get();
+      return json_encode($res);
+    }
 }
