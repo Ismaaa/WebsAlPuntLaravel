@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="827faf63-8069-43a7-85df-690b617a7368" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/estil.css" afterPath="$PROJECT_DIR$/public/css/estil.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/receptes/resultats.blade.php" afterPath="$PROJECT_DIR$/resources/views/receptes/resultats.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/receptes/recepta.blade.php" afterPath="$PROJECT_DIR$/resources/views/receptes/recepta.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,22 +31,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="recepta.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recepta.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/receptes/recepta.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="56" column="61" lean-forward="true" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resultats.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/receptes/resultats.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="29" column="70" lean-forward="true" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
-              <folding />
+            <state relative-caret-position="175">
+              <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
+              <folding>
+                <element signature="e#2565#2588#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,15 +70,15 @@
       <find>estil.css</find>
       <find>unitedcode</find>
       <find>color</find>
-      <find>veure rece</find>
       <find>recipeid</find>
       <find>anterior</find>
       <find>src</find>
       <find>img</find>
       <find>container</find>
-      <find>width</find>
       <find>footer</find>
       <find>subs</find>
+      <find>width</find>
+      <find>veure rece</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,10 +96,10 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/receptes/recepta.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/receptes/copia.resultats.blade.php" />
         <option value="$PROJECT_DIR$/public/css/estil.css" />
         <option value="$PROJECT_DIR$/resources/views/receptes/resultats.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/receptes/recepta.blade.php" />
       </list>
     </option>
   </component>
@@ -454,7 +445,7 @@
       <workItem from="1489023162634" duration="9000" />
       <workItem from="1489317804859" duration="8585000" />
       <workItem from="1489330631294" duration="2103000" />
-      <workItem from="1489332951980" duration="4138000" />
+      <workItem from="1489332951980" duration="4292000" />
     </task>
     <task id="LOCAL-00001" summary="Important styles&#10;Estructura recepta modificat&#10;Logos modificats&#10;Footers modificats">
       <created>1489325190503</created>
@@ -477,11 +468,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489336476172</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modificat resultats">
+      <created>1489337117691</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489337117691</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15938000" />
+    <option name="totallyTimeSpent" value="16092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -545,7 +543,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#2565#2588#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -588,7 +588,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
+          <folding>
+            <element signature="e#2565#2588#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -786,19 +788,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/receptes/recepta.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/receptes/resultats.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="56" column="61" lean-forward="true" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
+        <state relative-caret-position="212">
+          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/receptes/resultats.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/receptes/recepta.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="29" column="70" lean-forward="true" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
-          <folding />
+        <state relative-caret-position="175">
+          <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
+          <folding>
+            <element signature="e#2565#2588#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
