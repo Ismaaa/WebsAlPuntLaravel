@@ -6,7 +6,6 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex)
 
-import multiselect from './components/multiselect.vue';
 import multiselectSubmit from './components/multiselectSubmit.vue';
 
 const store = new Vuex.Store({
