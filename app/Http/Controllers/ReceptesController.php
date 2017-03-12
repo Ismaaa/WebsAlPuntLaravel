@@ -33,16 +33,21 @@ class ReceptesController extends Controller
     {
         //dd($id);
         $recepta = Recepta::find($id);
+        $ingredients = IngredientsReceptes::where('recipeid', '=', $id)->get();
+        //$ingredients = DB::table('recipeingredients')->where('recipeid', '=', $id)->get();
+        //$users = DB::table('users')->where('votes', '=', 100)->get();
+        //dd($ingredients);
+
         $relacionades = Recepta::where('id', '!=', $id)->inRandomOrder()->take(5)->get();;
 
         if ($recepta && $relacionades) 
         {
-            return view('receptes.recepta', compact('recepta', 'relacionades'));
+            return view('receptes.recepta', compact('recepta', 'relacionades', 'ingredients'));
         } 
         else {
             Alert::warning('No s\'ha trobat aquesta recepta, utilitza el nostre buscador :)')->persistent("D'acord!");
             //return redirect()->action('ReceptesController@vistaBuscar');
-            return view('welcome');
+            return redirect('/');
         }
     }
 
@@ -54,9 +59,12 @@ class ReceptesController extends Controller
 
     public function afegirRecepta(Request $request)
     {
+        //dd($request);
         //dd($request->ingredients);
         $recepta = new Recepta;
-
+        $quantitat = explode(" ",$request->quantitat);
+        $unitats = explode(" ",$request->unitat);
+        //dd($quantitat);
 /*
         $recepta->name = $request->name;
         $recepta->time = $request->time;
@@ -65,26 +73,31 @@ class ReceptesController extends Controller
         $recepta->img = $request->img;
         $recepta->font = $request->font;
         */
-
+       
         $recepta->fill($request->all());
 
+        /*
         if($request->hasFile('img'))
         {
             $imatge = $request->file('img');
             $nomfitxer = time() . '.' . $imatge->getClientOriginalExtension();
             Image::make($imatge)->resize(300, 300)->save( public_path('receptes\imatges' . $nomfitxer));
             $recepta->img = $nomfitxer;
-        }
+        }*/
 
         //dd($recepta);
         //dd($request);
         $recepta->save();
 
+        $pos=0;
         foreach ($request->ingredients as $ingredient) {
             $RecIng = new IngredientsReceptes;
             $RecIng->recipeid = $recepta->id;
             $RecIng->ingredientid = $ingredient;
+            $RecIng->quantity = $quantitat[$pos];
+            $RecIng->qty_units = $unitats[$pos];
             $RecIng->save();
+            $pos++;
         }
 
 
@@ -131,10 +144,10 @@ class ReceptesController extends Controller
         //dd($asd);
         $receptesIngredients = IngredientsReceptes::all();
 
-        if($ingredients->isEmpty() || $receptes->isEmpty() || $receptesIngredients->isEmpty())
+        if($ingredients->count()==0)
         {
             Alert::info('No hem trobat cap resultat, torna a provar-ho')->persistent("D'acord!");
-            return view('welcome');
+            return redirect('/');
         }
 
         //dd($ingredients);

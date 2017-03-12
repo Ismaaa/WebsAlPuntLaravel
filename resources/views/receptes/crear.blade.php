@@ -37,7 +37,7 @@
                         <div class="form-group">
                             {!! Form::label('diners', 'Diners', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::number('diners', null, ['class' => 'form-control','placeholder' => '3', 'required']) !!}
+                                {!! Form::number('diners', null, ['class' => 'form-control','placeholder' => '3']) !!}
                             </div>
                         </div>
                     </div>                      
@@ -46,7 +46,7 @@
                         <div class="form-group">
                             {!! Form::label('directions', 'Directions', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('directions', null, ['class' => 'form-control','placeholder' => 'Primer agafem el conill...', 'required']) !!}
+                                {!! Form::textarea('directions', null, ['class' => 'form-control','placeholder' => 'Primer agafem el conill...', 'required']) !!}
                             </div>
                         </div>
                     </div>   
@@ -56,7 +56,7 @@
                         <div class="form-group">
                             {!! Form::label('img', 'Img', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                               {!! Form::file('img', null, ['class' => 'form-control']) !!}
+                               {!! Form::text('img', null, ['class' => 'form-control', 'placeholder' => 'www.wikipedia.com/images/hola.png']) !!}
                             </div>
                         </div>
                     </div>    
@@ -86,6 +86,25 @@
 
                             </div>
                         </div>     
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                {!! Form::label('quantitat', 'Quantitat **Ordenats segons has ingredients de dalt', ['class' => 'col-md-4 control-label']) !!}
+                                <div class="col-md-6">
+                                    {{ Form::text('quantitat', null) }}
+                                </div>
+                            </div>
+                        </div>         
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                {!! Form::label('unitats', 'Unitats **Ordenats segons has ingredients de dalt - gr, ml, unitats', ['class' => 'col-md-4 control-label']) !!}
+                                <div class="col-md-6">
+                                    {{ Form::text('unitat', null) }}
+                                </div>
+                            </div>
+                        </div>   
+                        
 
                         <div class="form-group">
                             <div class="col-md-6">

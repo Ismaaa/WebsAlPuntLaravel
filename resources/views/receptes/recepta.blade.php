@@ -10,13 +10,35 @@
 					<h4 class="card-title">
 						{{ $recepta->name }}
 					</h4>			  	
-					<img class="card-img-bottom" src="http://placehold.it/600x300" width="600" height="300">
+					<img class="card-img-bottom" src="{{ $recepta->img }}" width="600" height="300">
+					<ul>
+							
+					</ul>	
+					<ul>
+						@foreach($ingredients as $ingredient)
+							<span class="glyphicon glyphicon-check" aria-hidden="true" style="color: green;"/></span>
+								<span style="color: #3097D1; font-weight: bold;">
+								<a href="/buscar?ingredients={{ $ingredient->ingredients->name }}">
+									@if($ingredient->qty_units=="unitats")
+										{{ $ingredient->quantity }}
+										- 
+										{{ ($ingredient->ingredients->plural) }}
+									@else
+										{{ $ingredient->quantity }} {{ $ingredient->qty_units }}
+										- 
+										{{ ($ingredient->ingredients->name) }}
+									@endif
+								</a>
+							</span>
+							<br>
+						@endforeach
+					</ul>				
 					<p class="card-text">
 						{{ $recepta->directions }}
 					</p>
 					<p class="card-text">
 						<small class="text-muted">
-							Temps {{ $recepta->time }}
+							{{ substr($recepta->time, 0, -3) }}
 						</small>
 					</p>
 					<p class="card-text">
@@ -31,7 +53,7 @@
 		<div class="row col-md-2">
 			<h3>També et pot interessar...</h3>
 			<div class="card" style="width: 20rem;">
-				<img class="card-img-bottom" src="http://placehold.it/250x150" width="250" height="150">
+				<img class="card-img-bottom" src="{{ $relacionades->first()->img }}" width="250" height="150">
 				<div class="card-block">
 			    	<h4 class="card-title">{{ $relacionades->first()->name }}</h4>
 			    	<p class="card-text">Durada: {{ $relacionades->first()->time }}</p>
@@ -50,7 +72,7 @@
 		@if(!$loop->first)
 			<div class="row col-md-3">
 				<a href="/receptes/{{ $relacionada->id }}">
-					<img class="thumbnail" src="http://placehold.it/250x150" width="250" height="150">
+					<img class="thumbnail" src="{{ $relacionada->img }}" width="250" height="150">
 			    		{{ $relacionada->name }}
 		    	</a>
 			</div>

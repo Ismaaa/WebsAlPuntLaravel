@@ -52,10 +52,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
+                        @if (Auth::check())
                             <li><a href="{{ route('admin.tauler') }}">Tauler</a></li>
                             <li><a href="{{ route('vista.crear.recepta') }}">Afegir recepta</a></li>
                             <li class="dropdown">
