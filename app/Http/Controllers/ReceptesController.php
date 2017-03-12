@@ -120,6 +120,11 @@ class ReceptesController extends Controller
 
     public function busqueda(Request $request)
     {
+        if(!$request->ingredients)
+        {
+            Alert::info('No has introduït cap ingredient, introdueix-ne un al menys :)')->persistent("D'acord!");
+            return redirect('/');
+        }        
         //dd($request->ingredients);
         $paraules = $request->ingredients;
         //dd($paraules);
