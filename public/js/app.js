@@ -21639,29 +21639,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
     components: { Multiselect: __WEBPACK_IMPORTED_MODULE_0_vue_multiselect__["Multiselect"] },
-    data: function data() {
-        return {
-            selected: null
-        };
-    },
 
     props: {
-        trackBy: {
-            type: String,
-            default: 'id'
-        },
-        value: {
-            default: null
-        },
         options: {},
         placeholder: {
             default: 'Select one'
@@ -21670,20 +21654,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             type: Boolean,
             default: true
         },
-
-        title: {
-            type: String,
-            default: null
-        },
-        formName: {
-            type: String,
-            default: null
-        }
-    },
-    methods: {
-        onInput: function onInput(event) {
-            this.$emit('input', event);
-        }
+        selected: ''
     }
 };
 
@@ -41439,23 +41410,13 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "searchIngredients"
-  }, [_c('h1', [_vm._v("Selecciona els ingredients")]), _vm._v(" "), _c('form', {
-    attrs: {
-      "method": "post",
-      "enctype": "multipart/form-data"
-    },
-    on: {
-      "submit": function($event) {
-        $event.preventDefault();
-        _vm.submitSearch($event)
-      }
-    }
+    staticClass: "dropdown"
   }, [_c('multiselect', {
     key: "name",
     attrs: {
-      "options": _vm.options,
+      "selected": _vm.selected,
       "show-labels": false,
+      "options": _vm.options,
       "placeholder": _vm.placeholder,
       "searchable": true,
       "allow-empty": true,
@@ -41463,25 +41424,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "close-on-select": false,
       "hide-selected": true,
       "options-limit": 5,
-      "block-keys": ['Tab'],
-      "track-by": _vm.trackBy,
+      "block-keys": ['Tab', 'Enter'],
       "label": "name"
-    },
-    on: {
-      "input": _vm.onInput
-    },
-    model: {
-      value: (_vm.ingredient.value),
-      callback: function($$v) {
-        _vm.ingredient.value = $$v
-      }
     }
-  }), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
+  }), _vm._v(" "), _c('label', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.showLabel),
+      expression: "showLabel"
+    }],
     attrs: {
-      "type": "submit"
+      "for": "multiselect"
     }
-  }, [_vm._v("Enviar")])], 1)])
+  }, [_c('span'), _vm._v("Language")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
