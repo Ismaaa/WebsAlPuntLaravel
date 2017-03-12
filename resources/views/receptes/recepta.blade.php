@@ -51,7 +51,7 @@
 					</p>
 					<p class="card-text">
 						<small class="text-muted">
-							{{ substr($recepta->time, 0, -3) }}
+							{{ substr($recepta->time, 0, -3) }} h
 						</small>
 					</p>
 					<p class="card-text">
