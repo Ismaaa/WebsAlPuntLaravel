@@ -34,7 +34,7 @@
 										- 
 										@if($ingredient->ingredients->plural && $ingredient->qty_units!=null)
 											{{ ($ingredient->ingredients->plural) }}
-										@elseif($ingredient->quantity > 1)
+										@elseif($ingredient->quantity > 1 && $ingredient->ingredients->plural!=null)
 											{{ ($ingredient->ingredients->plural) }}
 										@else
 											{{ ($ingredient->ingredients->name) }}
