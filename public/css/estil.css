@@ -15,6 +15,17 @@
     -webkit-text-size-adjust: none;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 100px;
+
+}
+/*
 html,body {
     background-color: white;
     color: #969696;
@@ -25,6 +36,7 @@ html,body {
     width: 100%;
     height: 100%;
 }
+*/
 
 #content{
     padding-bottom: 100px;
@@ -246,6 +258,37 @@ a:hover {
 }
 
 /*FOOTER*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 100px;
+    background-color: #34495E;
+    padding-top: 10px;
+    color: #adb0b2;
+}
+
+/*
+#wrap {
+    min-height: 100%;
+    height: auto;*/
+    /* Negative indent footer by its height */
+    /*margin: 0 auto -60px;*/
+    /* Pad bottom by footer height */
+    /*padding: 0 0 60px;*/
+/*
+}
+*/
+
+/* Set the fixed height of the footer here */
+/*
+#footer {
+    height: 150px;
+    background-color: #34495e;
+
+}
+
 
 footer{
     background: #34495e;
@@ -262,14 +305,14 @@ footer .container{
     height:100px;
     position: relative;
 }
+*/
 
 
-
-footer img{
+.footer-img{
     max-height:80px;
     max-width: 100px;
 }
-
+/*
 footer .grid_12 .socials{
     display: inline-block;
     right:0;
@@ -280,7 +323,6 @@ footer .grid_12 .socials{
 footer .grid_12 .socials a{
     display: inline-block;
     vertical-align: middle;
-    /*padding:10px;*/
 }
 
 .socials {
@@ -295,15 +337,14 @@ footer .row{
 }
 
 
-footer .grid_12{
-    /*margin-top: 50px;*/
-    /*padding: 40px;*/
+footer .grid_12 {
     text-align: right;
 }
 
 footer .container > .row{
     float: right;
 }
+
 
 .copyright {
     font-weight: normal;
@@ -330,3 +371,4 @@ footer .rowCopyright{
     position: absolute;
     bottom:0;
 }
+*/
