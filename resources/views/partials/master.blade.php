@@ -42,8 +42,8 @@
 
                     <span>Unitedcode </span> &copy; | <a style="color: #adb0b2;" href="#"><b>Política de privacitat</b></a>
                     <p>Lloc dissenyat per <a style="color: #adb0b2;" href="#"><b>United Code</b></a></p>
-                    <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                        <img alt="Llicència de Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
+                    <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                        <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" />
                     </a>
                 </div>
             </div>
