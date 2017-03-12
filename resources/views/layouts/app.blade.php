@@ -25,6 +25,7 @@
 <body>
     @include('sweet::alert')
     <div id="app">
+    @if(Auth::check())
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -79,6 +80,7 @@
                 </div>
             </div>
         </nav>
+    @endif
     </div>
         @yield('content')
 
