@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('receptes.busqueda')
 @section('content')
 
 	<div class="container">
