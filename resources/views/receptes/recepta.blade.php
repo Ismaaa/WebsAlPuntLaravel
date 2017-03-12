@@ -72,7 +72,12 @@
 					<div class="card-block">
 						<h4 class="card-title">{{ $relacionades->first()->name }}</h4>
 						<p class="card-text">Durada: {{ substr( $relacionades->first()->time, 0, -3) }} h</p>
-						<a href="/receptes/{{ $relacionades->first()->id }}" class="btn btn-primary">Veure recepta</a>
+						<a 
+							href="/receptes/{{ $relacionades->first()->id }}" 
+							class="btn btn-primary" 
+							style="background-color: #34495e;">
+								Veure recepta
+						</a>
 				  </div>
 				</div>
 
