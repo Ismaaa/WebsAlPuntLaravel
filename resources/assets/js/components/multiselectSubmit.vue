@@ -1,11 +1,7 @@
 <template>
         <div class="multiselect">
-            <!-- <form  method="post" enctype="multipart/form-data"> -->
-            <form method="GET"  action="/buscar?" accept-charset="UTF-8">
-              <table>
-                <tr>
-                  <td>
-              <div>
+          <table><tr><td><form method="GET"  action="/buscar?" accept-charset="UTF-8">
+              <div class="shadow" style="display: inline-flex;">
                   <multiselect
                     v-model="selectedIngredients"
                    :options="options"
@@ -15,22 +11,49 @@
                    :searchable = "true"
                    label="name"
                    trackBy="id"
+                   Limit="5"
+                   :loading="false"
+                   :hide-selected="true"
                    ></multiselect>
+                   <button type="submit">Buscar</button>
               </div>
-            </td>
-            <td>
-              <button type="submit">Buscar</button>
-            </td>
-          </tr>
-          </table>
-          <input type="hidden" name="ingredients" :value= "computedValue" id="ingredients">
-            </form>
+              <input type="hidden" name="ingredients" :value= "computedValue" id="ingredients">
+        </form></td></tr></table>
         </div>
 </template>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
 div.multiselect table{
-  width: 70%;
   margin: 0 auto;
+      width: 50%;
+}
+
+div.shadow{
+      width: 100%;
+  box-shadow:
+          1px 1px 0 rgb(52, 73, 94),
+          2px 2px 0 rgb(52, 73, 94),
+          3px 3px 0 rgb(52, 73, 94),
+          4px 4px 0 rgb(52, 73, 94),
+          5px 5px 0 rgb(52, 73, 94),
+          6px 6px 0 rgb(52, 73, 94),
+          7px 7px 0 rgb(52, 73, 94)
+;
+}
+.multiselect__tags{
+  border: none;
+}
+
+button{
+  border: none;
+  cursor: pointer;
+  background: white;
+  padding: 5px;
+  color: rgb(52, 73, 94);
+}
+.multiselect__select:before{
+  color: rgb(52, 73, 94);
+  border-color: rgb(52, 73, 94) transparent transparent;
 }
 </style>
 <script>
