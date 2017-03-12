@@ -21659,14 +21659,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).catch(function (error) {
         console.log(error);
       });
-    },
-    shuffle: function shuffle(a) {
-      for (var i = a.length; i; i--) {
-        var j = Math.floor(Math.random() * i);
-        var _ref = [a[j], a[i - 1]];
-        a[i - 1] = _ref[0];
-        a[j] = _ref[1];
-      }
     }
   },
   created: function created() {

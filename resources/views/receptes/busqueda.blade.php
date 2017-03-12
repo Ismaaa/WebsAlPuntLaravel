@@ -10,7 +10,7 @@
     {!! Form::close() !!}
 </div> --}}
 <div id="app">
-  <multiselect selected-label= "Seleccionat" deselect-label= "Prem enter per eliminar" select-label="Prem enter per seleccionar" placeholder = "Selecciona mes d'un ingredient..." ></multiselect>
+  <multiselect selected-label= "Seleccionat" deselect-label= "Prem enter per eliminar" select-label="Prem enter per seleccionar" placeholder = "Selecciona més d'un ingredient..." ></multiselect>
 </div>
 
 <script src="//code.jquery.com/jquery.js"></script>
