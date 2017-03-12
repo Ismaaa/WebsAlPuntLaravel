@@ -33,23 +33,17 @@
     <div class="container">
         <div class="row">
             @yield('contingut')
-            @include('receptes.busqueda')
-
-
-
+            {{-- @include('receptes.busqueda') --}}
+						{{-- VUE --}}
+						<div id="app">
+            	<multiselect
+            	title = "Selecciona els teus ingredients"
+            	placeholder = "Selecciona mes d'un ingredient..."
+            	></multiselect>
+						{{--<multiselect :options="{{ $ingredients->toJson() }}" title="Ingredients"  ></multiselect>--}}
+						</div>
+						{{-- /VUE --}}
         </div>
-
-				{{-- VUE --}}
-
-				<div id="app" class="form-group">
-				<multiselect
-						:options="{{ $ingredients->toJson() }}"
-						:selected.sync="selected"
-						:show-label="false"
-				 ></multiselect>
-				</div>
-
-				{{-- /VUE --}}
     </div>
 <script src="/js/app.js"></script>
 </section>
