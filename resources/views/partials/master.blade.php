@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
 	<meta charset="UTF-8">
 	<title>@yield('titol')</title>
 	{!! Html::script('js/jquery-3.1.1.min.js') !!}
@@ -9,6 +13,12 @@
     <link href="{{ asset('plugins/sweetalert/dist/sweetalert.css') }}" rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
+
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
 </head>
 <body>
 @include('sweet::alert')
@@ -17,23 +27,7 @@
         <div class="row">
             @yield('contingut')
             <div style="margin-top: 100px;"></div>
-            @include('receptes.busqueda')
-
-
-
         </div>
-
-				{{-- VUE --}}
-
-				<div id="app" class="form-group">
-				<multiselect
-						:options="{{ $ingredients->toJson() }}"
-						:selected.sync="selected"
-						:show-label="false"
-				 ></multiselect>
-				</div>
-
-				{{-- /VUE --}}
     </div>
 <script src="/js/app.js"></script>
 </section>
