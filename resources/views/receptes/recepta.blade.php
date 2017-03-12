@@ -76,7 +76,7 @@
 						<a 
 							href="/receptes/{{ $relacionades->first()->id }}" 
 							class="btn btn-primary" 
-							style="background-color: #34495e;">
+							style="color: #fafdff;">
 								Veure recepta
 						</a>
 				  </div>
