@@ -30,8 +30,10 @@
 											{{ ($ingredient->ingredients->name) }}
 										@endif
 									@else
-										{{ $ingredient->quantity }} {{ $ingredient->qty_units }}
-										- 
+										@if($ingredient->quantity!=null)
+											{{ $ingredient->quantity }} {{ $ingredient->qty_units }}
+											- 
+										@endif
 										@if($ingredient->ingredients->plural && $ingredient->qty_units!=null)
 											{{ ($ingredient->ingredients->plural) }}
 										@elseif($ingredient->quantity > 1 && $ingredient->ingredients->plural!=null)
@@ -39,7 +41,6 @@
 										@else
 											{{ ($ingredient->ingredients->name) }}
 										@endif
-										
 									@endif
 								</a>
 							</span>
