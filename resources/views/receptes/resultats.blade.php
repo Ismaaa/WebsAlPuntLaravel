@@ -21,7 +21,7 @@
                                 <div class="col-sm-6 col-md-4">
 
                                     <div class="overlay-container">
-                                        <img width="200px" src="{{$recepta->receptes->img}}">
+                                        <a href="/receptes/{{ $recepta->recipeid }}"><img width="200px" src="{{$recepta->receptes->img}}"></a>
                                     </div>
 
                                     <div class="overlay-to-top">
