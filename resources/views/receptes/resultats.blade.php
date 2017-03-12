@@ -1,59 +1,54 @@
 @extends('layouts.app')
+@include('receptes.busqueda')
+<br>
 @section('content')
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <div class="col-md-2"></div>
-    <div class="panel-group col-md-8">
-        <div class="panel panel-primary">
-        <div class="panel-heading">Resultats</div>
-            <table class="table table-striped table-hover table-responsive">
-                <thead>
-                    <tr>
-                        <th>
-                            #
-                        </th>
-                        <th>
-                            Ingredient
-                        </th>
-                        <th>
-                            Receptes amb aquest ingredient
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
+    <section>
+        <div class="container">
+            <div class="row">
 
-                    @php
-                        $anterior=null;
-                    @endphp
+                @foreach($ingredients as $ingredient)
+                    @foreach($ingredient->receptes as $recepta)
+                        @php
+                            $noms = App\Recepta::find($recepta->recipeid)
+                        @endphp
 
-                    @foreach($ingredients as $ingredient)
-                        <tr>
-                            <td>
-                                {{ $loop->iteration }}
-                            </td>
-                            <td>
-                                {{ $ingredient->name }}
-                            </td>
-                            <td>
-                                @foreach($ingredient->receptes as $recepta)
-                                    <a href="/receptes/{{ $recepta->recipeid }}">
-                                        @php
-                                            $noms = App\Recepta::find($recepta->recipeid)
-                                            //$recepta->recipeid
-                                        @endphp
-                                            <label class="label label-primary" style="cursor:pointer">
-                                                {{ $noms->name }}
-                                            </label>
-                                            <br>
-                                    </a>
-                                @endforeach
-                            </td>
-                        </tr>
+                        <div class="image-box style-3-b">
+
+                            <div class="row">
+
+                                <div class="col-sm-6 col-md-4">
+
+                                    <div class="overlay-container">
+                                        <img width="200px" src="{{$recepta->receptes->img}}">
+                                    </div>
+
+                                    <div class="overlay-to-top">
+
+                                        <p class="small margin-clear">
+                                            <em>{{ $noms->name }}</em>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-8">
+
+                                    <a href="/receptes/{{ $recepta->recipeid }}"><h1>{{ $noms->name }}</h1></a>
+                                    <p>Conté: {{ $ingredient->name }}</p>
+                                    <p>{{ substr($recepta->receptes->directions, 0, 100) }}...</p>
+
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
-                </tbody>
-            </table>
+                @endforeach
+
+            </div>
         </div>
-    </div>
-    <div class="col-md-2"></div>
+    </section>
+
 @endsection
+@include('partials.footer')
 
