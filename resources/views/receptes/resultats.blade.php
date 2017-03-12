@@ -36,7 +36,7 @@
                                 <div class="col-sm-6 col-md-8">
 
                                     <a href="/receptes/{{ $recepta->recipeid }}"><h1>{{ $noms->name }}</h1></a>
-                                    <p>Conté: {{ $ingredient->name }}</p>
+                                    <p>Conté: <span style="font-weight: bold;">{{ $ingredient->name }}</span></p>
                                     <p>{{ substr($recepta->receptes->directions, 0, 100) }}...</p>
 
                                 </div>
