@@ -70,7 +70,7 @@
 				<img class="card-img-bottom" src="{{ $relacionades->first()->img }}" width="250" height="150">
 				<div class="card-block">
 			    	<h4 class="card-title">{{ $relacionades->first()->name }}</h4>
-			    	<p class="card-text">Durada: {{ $relacionades->first()->time }}</p>
+			    	<p class="card-text">Durada: {{ substr( $relacionades->first()->time, 0, -3) }} h</p>
 			    	<a href="/receptes/{{ $relacionades->first()->id }}" class="btn btn-primary">Veure recepta</a>
 			  </div>
 			</div>
