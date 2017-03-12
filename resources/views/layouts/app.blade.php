@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('plugins/sweetalert/dist/sweetalert.css') }}" rel="stylesheet">

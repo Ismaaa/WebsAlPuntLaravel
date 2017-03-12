@@ -11,7 +11,7 @@
                 @foreach($ingredients as $ingredient)
                     @foreach($ingredient->receptes as $recepta)
                         @php
-                            $noms = App\Recepta::find($recepta->recipeid)
+                            $noms = App\Recepta::find($recepta->recipeid);
                         @endphp
 
                         <div class="image-box style-3-b">
@@ -43,6 +43,9 @@
                             </div>
                         </div>
                     @endforeach
+                    @if($loop->last)
+                        <div id="separador" style="margin-top: 150px"></div>
+                    @endif
                 @endforeach
 
             </div>
