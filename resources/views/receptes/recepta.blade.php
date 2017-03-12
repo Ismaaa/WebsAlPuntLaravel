@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 	<div class="container">
 		<div class="container-fluid col-md-12">
 			<div class="row col-md-9">
@@ -28,6 +29,7 @@
 											@else
 												{{ ($ingredient->ingredients->name) }}
 											@endif
+
 										@else
 											{{ $ingredient->quantity }} {{ $ingredient->qty_units }}
 											-
@@ -73,6 +75,7 @@
 						<a href="/receptes/{{ $relacionades->first()->id }}" class="btn btn-primary">Veure recepta</a>
 				  </div>
 				</div>
+
 			</div>
 
 		</div>

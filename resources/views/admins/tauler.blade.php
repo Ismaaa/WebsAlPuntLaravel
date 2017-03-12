@@ -61,9 +61,9 @@
                                             {{ $recepta->directions }}
                                         </td>
                                         <td>
-                                            <a href="http://unitedcode.cat/{{ $recepta->img }}">
+                                            <a href="{{ $recepta->img }}">
                                                 <img 
-                                                    src="http://unitedcode.cat/{{ $recepta->img }}"
+                                                    src="{{ $recepta->img }}"
                                                     style="width: 50px; height: 50px" 
                                                 />
                                             </a>
