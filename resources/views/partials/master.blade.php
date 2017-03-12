@@ -27,7 +27,7 @@
 						</div>
 						{{-- /VUE --}}
             <div style="margin-top: 100px;"></div>
-            @include('receptes.busqueda')
+            {{-- @include('receptes.busqueda') --}}
         </div>
     </div>
 <script src="/js/app.js"></script>
