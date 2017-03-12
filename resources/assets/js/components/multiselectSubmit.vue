@@ -1,4 +1,4 @@
-<template>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <template>
         <div class="multiselect">
           <table><tr><td><form method="GET"  action="/buscar?" accept-charset="UTF-8">
               <div class="shadow" style="display: inline-flex;">
@@ -6,6 +6,9 @@
                     v-model="selectedIngredients"
                    :options="options"
                    :placeholder="placeholder"
+                   :select-label="selectLabel"
+                   :deselect-label="deselectLabel"
+                   :selected-label="selectedLabel"
                    :multiple="true"
                    :close-on-select="false"
                    :searchable = "true"
@@ -95,6 +98,12 @@
               console.log(error);
             });
 
+          },
+          shuffle: function(a) {
+            for (let i = a.length; i; i--) {
+              let j = Math.floor(Math.random() * i);
+              [a[i - 1], a[j]] = [a[j], a[i - 1]];
+            }
           }
         },
         created(){
@@ -110,6 +119,21 @@
             placeholder:{
                 type: String,
                 required: true,
+                default: 'placeholder'
+            },
+            selectLabel:{
+                type: String,
+                required: false,
+                default: 'placeholder'
+            },
+            deselectLabel:{
+                type: String,
+                required: false,
+                default: 'placeholder'
+            },
+            selectedLabel:{
+                type: String,
+                required: false,
                 default: 'placeholder'
             },
             arr: {
