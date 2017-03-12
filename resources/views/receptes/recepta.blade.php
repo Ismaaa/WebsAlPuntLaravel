@@ -19,7 +19,7 @@
 							<span class="glyphicon glyphicon-check" aria-hidden="true" style="color: green;"/></span>
 								<span style="color: #3097D1; font-weight: bold;">
 								<a href="/buscar?ingredients={{ $ingredient->ingredients->name }}">
-									@if($ingredient->qty_units=="unitats")
+									@if($ingredient->qty_units==null)
 										@if($ingredient->quantity!=null)
 											{{ $ingredient->quantity }}
 											- 
