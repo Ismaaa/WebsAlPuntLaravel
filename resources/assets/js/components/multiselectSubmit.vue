@@ -11,9 +11,12 @@
                    :searchable = "true"
                    label="name"
                    trackBy="id"
-                   Limit="5"
-                   :loading="false"
+                   :options-limit="5"
+                   :loading="isLoading"
                    :hide-selected="true"
+                   :internal-search="internalSearch"
+                   @search-change="asyncFind"
+                   id="ajax"
                    ></multiselect>
                    <button type="submit">Buscar</button>
               </div>
@@ -23,38 +26,38 @@
 </template>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
-div.multiselect table{
-  margin: 0 auto;
-      width: 50%;
-}
+  div.multiselect table{
+    margin: 0 auto;
+        width: 50%;
+  }
 
-div.shadow{
-      width: 100%;
-  box-shadow:
-          1px 1px 0 rgb(52, 73, 94),
-          2px 2px 0 rgb(52, 73, 94),
-          3px 3px 0 rgb(52, 73, 94),
-          4px 4px 0 rgb(52, 73, 94),
-          5px 5px 0 rgb(52, 73, 94),
-          6px 6px 0 rgb(52, 73, 94),
-          7px 7px 0 rgb(52, 73, 94)
-;
-}
-.multiselect__tags{
-  border: none;
-}
+  div.shadow{
+        width: 100%;
+    box-shadow:
+            1px 1px 0 rgb(52, 73, 94),
+            2px 2px 0 rgb(52, 73, 94),
+            3px 3px 0 rgb(52, 73, 94),
+            4px 4px 0 rgb(52, 73, 94),
+            5px 5px 0 rgb(52, 73, 94),
+            6px 6px 0 rgb(52, 73, 94),
+            7px 7px 0 rgb(52, 73, 94)
+  ;
+  }
+  .multiselect__tags{
+    border: none;
+  }
 
-button{
-  border: none;
-  cursor: pointer;
-  background: white;
-  padding: 5px;
-  color: rgb(52, 73, 94);
-}
-.multiselect__select:before{
-  color: rgb(52, 73, 94);
-  border-color: rgb(52, 73, 94) transparent transparent;
-}
+  button{
+    border: none;
+    cursor: pointer;
+    background: white;
+    padding: 5px;
+    color: rgb(52, 73, 94);
+  }
+  .multiselect__select:before{
+    color: rgb(52, 73, 94);
+    border-color: rgb(52, 73, 94) transparent transparent;
+  }
 </style>
 <script>
     import { Multiselect } from 'vue-multiselect';
@@ -63,7 +66,9 @@ button{
         data(){
             return {
                 selectedIngredients: '',
-                options: []
+                options: [],
+                isLoading: false,
+                internalSearch: true
             }
         },
         computed: {
@@ -77,7 +82,20 @@ button{
           }
         },
         methods: {
+          asyncFind: function(query){
+            this.isLoading = true;
+            this.internalSearch = false;
+            var otherResults = [];
+            axios.get('/ingredients/get/'+query).then(response => {
+                this.options = response.data;
+                this.isLoading = false;
+                this.internalSearch = false;
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
 
+          }
         },
         created(){
           axios.get('/ingredients/get').then(response => {

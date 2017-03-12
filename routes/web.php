@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 /*  PROVES */
 Route::get('/ingredients/get','IngredientsController@tot');
+Route::get('/ingredients/get/{query}','IngredientsController@consulta');
 Route::get('prova','ReceptesController@prova');
 Route::get('tot', 'ReceptesController@tot');
 
